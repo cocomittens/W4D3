@@ -1,0 +1,17 @@
+<h2>Edit Account!</h2>
+
+<input type="hidden" name="authenticity_token" value="<%=authenticity_token%>">
+
+<form action="users_url" method='post'>
+<input type="hidden" name="_method", value="patch">
+
+  <label for="username">Username: 
+    <input type="text" name="user[user_name]" value="<%=user.username%>">
+  </label>
+
+  <label for="password">Password: 
+    <input type="password" name="user[password]" value="">
+  </label>
+
+  <input type="submit" value="Edit User!">
+</form>

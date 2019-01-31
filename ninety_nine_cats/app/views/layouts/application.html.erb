@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NinetyNineCats</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <h1>Hello, (Username goes here!) </h1>
+
+    <a href="<%=new_user_url%>">Sign up!</a>
+    <br>
+    <a href="<%=new_session_url%>">Sign in!</a>
+    <br>
+    <form action="<%= session_url %>" method="post">
+        <input type="hidden" name = "_method" value="delete"/>
+        <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+        <input type="submit" value="Log Out">
+        </form>
+    <%= yield %>
+  </body>
+</html>
